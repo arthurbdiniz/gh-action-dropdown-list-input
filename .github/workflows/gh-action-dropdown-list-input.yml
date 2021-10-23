@@ -6,7 +6,7 @@ on:
       default:
         description: 'Default'
         required: true
-        default: 'default1, default2'
+        default: 'default'
       environments:
         description: 'Environments'
         required: true
@@ -23,8 +23,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v2
+      - name: Format inputs
+        run: |
+          echo "::set-output name=environment::$(echo ${{ github.event.inputs.environments }} | awk -F'[][]' '{print $2}')"
+        id: format_inputs
+      - name: Print environment using awk
+        run: echo ${{ steps.format_inputs.outputs.environment }}
       - name: Print environment using awk
         run: echo ${{ github.event.inputs.environments }} | awk -F'[][]' '{print $2}'
       - name: Print environment using sed

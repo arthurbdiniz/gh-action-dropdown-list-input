@@ -26,6 +26,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Format inputs
+        run: |
+          echo "::set-output name=environment::$(echo ${{ github.event.inputs.environments }} | awk -F'[][]' '{print $2}')"
+        id: format_inputs
+      - name: Print environment using format inputs step
+        run: echo ${{ steps.format_inputs.outputs.environment }}
       - name: Print environment using awk
         run: echo ${{ github.event.inputs.environments }} | awk -F'[][]' '{print $2}'
       - name: Print environment using sed
