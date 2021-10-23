@@ -1,0 +1,35 @@
+name: gh-action-dropdown-list-input
+
+on:
+  workflow_dispatch:
+    inputs:
+      default:
+        description: 'Default'
+        required: true
+        default: 'default1, default2'
+      environments:
+        description: 'Environments'
+        required: true
+        default: 'dev,staging,[uat],prod'
+      providers:
+        description: 'Providers'
+        required: true
+        default: 'Google Cloud,[AWS],GCP'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Print environment using awk
+        run: echo ${{ github.event.inputs.environments }} | awk -F'[][]' '{print $2}'
+      - name: Print environment using sed
+        run: echo ${{ github.event.inputs.environments }} | sed 's/.*\[\([^]]*\)\].*/\1/g'
+      - name: Print providers using awk
+        run: echo ${{ github.event.inputs.providers }} | awk -F'[][]' '{print $2}'
+      - name: Print providers using sed
+        run: echo ${{ github.event.inputs.providers }} | sed 's/.*\[\([^]]*\)\].*/\1/g'
