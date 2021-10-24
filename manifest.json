@@ -10,11 +10,12 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://github.com/*/*/actions/workflows/*"],
+            "matches": ["https://github.com/*"],
             "js": ["content.js"]
         }
     ],
-    "permissions": [],
-    "optional_permissions": [],
-    "host_permissions": ["https://github.com/*/*/actions/workflows/*"]
+    "permissions": [
+        "activeTab"
+    ],
+    "host_permissions": ["https://github.com/*"]
 }
