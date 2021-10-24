@@ -1,12 +1,13 @@
 function formatInputList(inputs) {
     for (let input of inputs) {
         if (input.id.startsWith("input_") && input.value.includes("[") && input.value.includes("]")) {
-            var values = input.value.split(",")
-
+            var values = input.value.split(",");
             var selector = document.createElement('select');
+
             selector.name = input.id
             selector.classList = ["form-control form-select" ]
-            values.forEach(function (option, index) {
+
+            values.forEach(function (option) {
                 if (option.startsWith("[") && option.endsWith("]")) {
                     option = option.replace("[", "").replace("]", "")
                     optionHtml = `<option value="${option}" selected="selected">${option}</option>`
