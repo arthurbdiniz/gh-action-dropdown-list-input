@@ -7,12 +7,12 @@ on:
         description: 'Default'
         required: true
         default: 'default'
-      environments:
-        description: 'Environments'
+      environment:
+        description: 'Environment'
         required: true
         default: 'dev,staging,[uat],prod'
-      providers:
-        description: 'Providers'
+      provider:
+        description: 'Provider'
         required: true
         default: 'Google Cloud,[AWS],GCP'
 
@@ -23,17 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Format inputs
-        run: |
-          echo "::set-output name=environment::$(echo ${{ github.event.inputs.environments }} | awk -F'[][]' '{print $2}')"
-        id: format_inputs
-      - name: Print environment using awk
-        run: echo ${{ steps.format_inputs.outputs.environment }}
-      - name: Print environment using awk
-        run: echo ${{ github.event.inputs.environments }} | awk -F'[][]' '{print $2}'
-      - name: Print environment using sed
-        run: echo ${{ github.event.inputs.environments }} | sed 's/.*\[\([^]]*\)\].*/\1/g'
-      - name: Print providers using awk
-        run: echo ${{ github.event.inputs.providers }} | awk -F'[][]' '{print $2}'
-      - name: Print providers using sed
-        run: echo ${{ github.event.inputs.providers }} | sed 's/.*\[\([^]]*\)\].*/\1/g'
+      - name: Print environment
+        run: echo ${{ github.event.inputs.environment }}
+      - name: Print provider
+        run: echo ${{ github.event.inputs.provider }}
