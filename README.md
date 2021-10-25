@@ -4,6 +4,11 @@ Extends GitHub Action UI replacing plain text input fields to the dropdown.
 
 ![showcase](images/showcase.png)
 
+## Install extension
+
+- [Chrome](https://chrome.google.com/webstore/detail/github-action-dropdown-in/deogklnblohhopmnkllaeinijefddcnm)
+> Firefox: is still in review process to be published.
+
 #### Configuring tags
 
 Go to the top right corner of the browser you are using and click on the extension logo. A screen will popup with tag options. Choose the right tags for you and save it.
@@ -11,11 +16,6 @@ Go to the top right corner of the browser you are using and click on the extensi
 > This action might require reloading the GitHub workflow tab.
 
 ![config](images/config.png)
-
-## Install extension
-
-- [Chrome](https://chrome.google.com/webstore/detail/github-action-dropdown-in/deogklnblohhopmnkllaeinijefddcnm)
-> Firefox: is still in review process to be published.
 
 ## Usage
 
