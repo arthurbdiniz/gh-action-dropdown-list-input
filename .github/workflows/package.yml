@@ -13,9 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Package chrome
-        run: zip -r -FS gh-action-dropdown-chrome.zip chrome
+        run: cd chrome && zip -r -FS gh-action-dropdown-chrome.zip *
       - name: Package firefox
-        run: zip -r -FS gh-action-dropdown-firefox.zip firefox
+        run: cd firefox && zip -r -FS ../gh-action-dropdown-firefox.zip *
       - name: release
         uses: actions/create-release@v1
         id: create_release
