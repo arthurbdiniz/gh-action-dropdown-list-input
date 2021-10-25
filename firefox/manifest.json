@@ -25,7 +25,7 @@
     ],
     "browser_specific_settings": {
         "gecko": {
-            "id": "gh-action-dropdown-list-input@mozilla.org",
+            "id": "gh-action-dropdown-list-input@arthurbdiniz.com",
             "strict_min_version": "57.0a1"
         }
     }
