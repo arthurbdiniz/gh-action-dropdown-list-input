@@ -7,7 +7,7 @@ Extends GitHub Action UI replacing plain text input fields to the dropdown.
 ## Install extension
 
 - [Chrome](https://chrome.google.com/webstore/detail/github-action-dropdown-in/deogklnblohhopmnkllaeinijefddcnm)
-> Firefox: is still in review process to be published.
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/github-action-dropdown-input/)
 
 #### Configuring tags
 
