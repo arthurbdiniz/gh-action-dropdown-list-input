@@ -40,15 +40,12 @@ function queryInputList() {
     let count = 0
     let actionInputs = []
 
-    let popupStartTag = "["
-    let popupEndTag = "]"
-
     startTagStorageItem = browser.storage.sync.get("popupStartTag")
     startTagStorageItem.then((res) => {
-        popupStartTag = res.popupStartTag
+        let popupStartTag = res.popupStartTag || "["
         endTagStorageItem = browser.storage.sync.get("popupEndTag")
         endTagStorageItem.then((res) => {
-            popupEndTag = res.popupEndTag
+            let popupEndTag = res.popupEndTag || "]"
             for (let input of inputs) {
                 if (input.id.startsWith("input_")) {
                     count++
