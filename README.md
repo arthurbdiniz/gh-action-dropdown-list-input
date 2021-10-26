@@ -49,11 +49,11 @@ jobs:
 ## Package extension
 
 ```bash
-zip -r -FS gh-action-dropdown-chrome.zip chrome
+# Chrome
+make package-chrome
 
-# or
-
-zip -r -FS gh-action-dropdown-firefox.zip firefox
+# Firefox
+make package-firefox
 ```
 
 ## License
