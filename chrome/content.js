@@ -40,12 +40,9 @@ function queryInputList() {
     let count = 0
     let actionInputs = []
 
-    let popupStartTag = "["
-    let popupEndTag = "]"
-
     chrome.storage.sync.get(["popupStartTag", "popupEndTag"], function(items){
-        popupStartTag = items["popupStartTag"]
-        popupEndTag = items["popupEndTag"]
+        let popupStartTag = items["popupStartTag"] || "["
+        let popupEndTag = items["popupEndTag"] || "]"
 
         for (let input of inputs) {
             if (input.id.startsWith("input_")) {
