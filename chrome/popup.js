@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document.querySelector("form").addEventListener("submit", saveOptions);
 
-function saveOptions(e) {
+function saveOptions(event) {
     chrome.storage.sync.set({
         "popupStartTag": document.querySelector("#popupStartTag").value || '['
     });
@@ -11,7 +11,10 @@ function saveOptions(e) {
     });
 
     restoreOptions();
-    e.preventDefault();
+
+    if (event) {
+        event.preventDefault();
+    }
 }
 
 function restoreOptions() {
