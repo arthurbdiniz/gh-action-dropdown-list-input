@@ -25,10 +25,10 @@ function restoreOptions() {
 
         if (!items["popupEndTag"]){
             chrome.storage.sync.set({
-                popupEndTag: '['
+                popupEndTag: ']'
             });
         }
-        document.querySelector("#popupEndTag").value = items["popupEndTag"] || '[';
+        document.querySelector("#popupEndTag").value = items["popupEndTag"] || ']';
 
     });
 }
