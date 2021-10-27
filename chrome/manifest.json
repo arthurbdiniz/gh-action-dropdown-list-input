@@ -19,7 +19,6 @@
         "default_title": "GitHub workflows dropdown inputs"
     },
     "permissions": [
-        "activeTab",
         "storage"
     ]
 }
